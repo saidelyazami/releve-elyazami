@@ -29,8 +29,3 @@ releve  (@RIB)
 
 <img width="1745" height="243" alt="image" src="https://github.com/user-attachments/assets/47ea227b-1d6a-4c76-a929-d511422e587b" />
 
-
-
-```bash
-
-```
