@@ -20,7 +20,12 @@ releve  (@RIB)
 └── operations  (@dateDebut, @dateFin)
     └── operation +  (@type, @date, @montant, @description)
 ```
+
+## Resultat de Relevé bancaire:
+
 <img width="1730" height="417" alt="image" src="https://github.com/user-attachments/assets/de1f7be0-43e7-4d7e-a1d7-dfe2b75b6b50" />
+
+## Resultat d'Opérations de type CREDIT:
 
 <img width="1745" height="243" alt="image" src="https://github.com/user-attachments/assets/47ea227b-1d6a-4c76-a929-d511422e587b" />
 
