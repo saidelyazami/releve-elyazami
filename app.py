@@ -115,9 +115,26 @@ def onglet_xsl(xml_nom: str, xsl_nom: str, cle: str):
             xsl_texte = st.text_area(xsl_nom, lire(xsl_nom), height=380, key=f"xsl_{cle}")
     try:
         html = transformer(xml_texte, xsl_texte)
-        st.markdown("**Résultat HTML**")
-        with st.container(border=True):
-            st.html(html)
+        mode = st.segmented_control(
+            "Affichage",
+            ["Rendu", "Code HTML", "Les deux"],
+            default="Rendu",
+            key=f"mode_{cle}",
+        ) or "Rendu"
+        if mode == "Rendu":
+            with st.container(border=True):
+                st.html(html)
+        elif mode == "Code HTML":
+            st.code(html, language="html")
+        else:
+            col_rendu, col_code = st.columns(2)
+            with col_rendu:
+                st.markdown("**Rendu**")
+                with st.container(border=True):
+                    st.html(html)
+            with col_code:
+                st.markdown("**Code HTML**")
+                st.code(html, language="html")
         st.download_button("Télécharger le HTML", html, file_name=xsl_nom.replace(".xsl", ".html"),
                            mime="text/html", key=f"dl_{cle}")
     except (etree.XMLSyntaxError, etree.XSLTParseError, etree.XSLTApplyError) as e:
