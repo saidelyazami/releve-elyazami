@@ -1,4 +1,4 @@
-# # Partie 3 : RELEVE BANCAIRE
+### Partie 3 : RELEVE BANCAIRE
 
 Activité pratique Technologie XML : gestion de relevés de comptes bancaires.
 
